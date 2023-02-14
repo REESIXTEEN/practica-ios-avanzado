@@ -17,6 +17,12 @@
 		CB4E56D7299BA63900BB2E0F /* practica_ios_avanzadoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56D6299BA63900BB2E0F /* practica_ios_avanzadoTests.swift */; };
 		CB4E56E1299BA63900BB2E0F /* practica_ios_avanzadoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56E0299BA63900BB2E0F /* practica_ios_avanzadoUITests.swift */; };
 		CB4E56E3299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56E2299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift */; };
+		CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56F5299BAB6D00BB2E0F /* TableViewController.swift */; };
+		CB4E56F8299BAB6D00BB2E0F /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56F6299BAB6D00BB2E0F /* TableViewController.xib */; };
+		CB4E56FB299BAE1400BB2E0F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56FA299BAE1400BB2E0F /* Heroe.swift */; };
+		CB4E56FF299BAF6F00BB2E0F /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */; };
+		CB4E5700299BAF6F00BB2E0F /* CellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */; };
+		CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5701299BB4C500BB2E0F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		CB4E56DC299BA63900BB2E0F /* practica-ios-avanzadoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "practica-ios-avanzadoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4E56E0299BA63900BB2E0F /* practica_ios_avanzadoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practica_ios_avanzadoUITests.swift; sourceTree = "<group>"; };
 		CB4E56E2299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practica_ios_avanzadoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB4E56F5299BAB6D00BB2E0F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		CB4E56F6299BAB6D00BB2E0F /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		CB4E56FA299BAE1400BB2E0F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
+		CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
+		CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellViewController.xib; sourceTree = "<group>"; };
+		CB4E5701299BB4C500BB2E0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +113,15 @@
 		CB4E56BB299BA63700BB2E0F /* practica-ios-avanzado */ = {
 			isa = PBXGroup;
 			children = (
+				CB4E56F9299BAE0200BB2E0F /* Model */,
+				CB4E56EF299BA87000BB2E0F /* View */,
 				CB4E56BC299BA63700BB2E0F /* AppDelegate.swift */,
 				CB4E56BE299BA63700BB2E0F /* SceneDelegate.swift */,
 				CB4E56C0299BA63700BB2E0F /* ViewController.swift */,
+				CB4E5701299BB4C500BB2E0F /* Extensions.swift */,
 				CB4E56C2299BA63700BB2E0F /* Main.storyboard */,
-				CB4E56C8299BA63900BB2E0F /* Assets.xcassets */,
 				CB4E56CA299BA63900BB2E0F /* LaunchScreen.storyboard */,
+				CB4E56C8299BA63900BB2E0F /* Assets.xcassets */,
 				CB4E56CD299BA63900BB2E0F /* Info.plist */,
 				CB4E56C5299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld */,
 			);
@@ -128,6 +143,41 @@
 				CB4E56E2299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift */,
 			);
 			path = "practica-ios-avanzadoUITests";
+			sourceTree = "<group>";
+		};
+		CB4E56EF299BA87000BB2E0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E56F0299BA87900BB2E0F /* TableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB4E56F0299BA87900BB2E0F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E56FC299BAF5600BB2E0F /* Cell */,
+				CB4E56F5299BAB6D00BB2E0F /* TableViewController.swift */,
+				CB4E56F6299BAB6D00BB2E0F /* TableViewController.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		CB4E56F9299BAE0200BB2E0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E56FA299BAE1400BB2E0F /* Heroe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB4E56FC299BAF5600BB2E0F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */,
+				CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4E56CC299BA63900BB2E0F /* LaunchScreen.storyboard in Resources */,
+				CB4E5700299BAF6F00BB2E0F /* CellViewController.xib in Resources */,
 				CB4E56C9299BA63900BB2E0F /* Assets.xcassets in Resources */,
 				CB4E56C4299BA63700BB2E0F /* Main.storyboard in Resources */,
+				CB4E56F8299BAB6D00BB2E0F /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4E56FF299BAF6F00BB2E0F /* CellViewController.swift in Sources */,
 				CB4E56C1299BA63700BB2E0F /* ViewController.swift in Sources */,
 				CB4E56BD299BA63700BB2E0F /* AppDelegate.swift in Sources */,
+				CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */,
 				CB4E56C7299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */,
+				CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */,
 				CB4E56BF299BA63700BB2E0F /* SceneDelegate.swift in Sources */,
+				CB4E56FB299BAE1400BB2E0F /* Heroe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
