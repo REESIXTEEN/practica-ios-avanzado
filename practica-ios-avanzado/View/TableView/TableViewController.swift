@@ -23,13 +23,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         searchBar.delegate = self
         
         navigationItem.title = "Heroes"
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         let xib = UINib(nibName: "TableCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: "customTableCell")
         
-        let token = LocalDataLayer.shared.getValue(key: .token)
-        Network.shared.fetchHeroes(token: token) { [weak self] allHeroes, error in
+        //let token = LocalDataLayer.shared.getValue(key: .token)
+        /*Network.shared.fetchHeroes(token: token) { [weak self] allHeroes, error in
             guard let self = self else { return }
             
             if let allHeroes = allHeroes {
@@ -44,13 +43,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print("Error fetching heroes: ", error?.localizedDescription ?? "")
             }
             
-        }
+        }*/
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! CellViewController
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! CellViewController
         let heroe = searchedHeroes[indexPath.row]
-        cell.image.setImage(url: heroe.photo)
+        cell.cellImage.setImage(url: heroe.photo)
         cell.nameLabel.text = heroe.name
         cell.descriptionLabel.text = heroe.description
         cell.accessoryType = .disclosureIndicator

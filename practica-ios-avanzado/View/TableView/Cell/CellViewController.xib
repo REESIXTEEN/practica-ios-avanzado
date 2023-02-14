@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CellViewController" customModule="practica_ios_avanzado" customModuleProvider="target">
             <connections>
+                <outlet property="cellImage" destination="k5e-Cb-dOV" id="SlZ-7L-p0T"/>
                 <outlet property="descriptionLabel" destination="S71-wH-erz" id="bFA-Xd-0iA"/>
                 <outlet property="image" destination="k5e-Cb-dOV" id="JZU-zf-1Sl"/>
                 <outlet property="nameLabel" destination="FUz-0n-brg" id="0Q8-C2-UOu"/>
