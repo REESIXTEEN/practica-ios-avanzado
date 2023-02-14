@@ -23,6 +23,14 @@
 		CB4E56FF299BAF6F00BB2E0F /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */; };
 		CB4E5700299BAF6F00BB2E0F /* CellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */; };
 		CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5701299BB4C500BB2E0F /* Extensions.swift */; };
+		CB4E5705299BB61F00BB2E0F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5704299BB61F00BB2E0F /* TabBarController.swift */; };
+		CB4E570A299BB6C200BB2E0F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5708299BB6C200BB2E0F /* UserViewController.swift */; };
+		CB4E570B299BB6C200BB2E0F /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E5709299BB6C200BB2E0F /* UserViewController.xib */; };
+		CB4E570F299BBB6F00BB2E0F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E570D299BBB6F00BB2E0F /* DetailViewController.swift */; };
+		CB4E5710299BBB6F00BB2E0F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E570E299BBB6F00BB2E0F /* DetailViewController.xib */; };
+		CB4E5714299BBC9A00BB2E0F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5713299BBC9A00BB2E0F /* Network.swift */; };
+		CB4E5718299BBD1200BB2E0F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5716299BBD1200BB2E0F /* MapViewController.swift */; };
+		CB4E5719299BBD1200BB2E0F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E5717299BBD1200BB2E0F /* MapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +71,14 @@
 		CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellViewController.xib; sourceTree = "<group>"; };
 		CB4E5701299BB4C500BB2E0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CB4E5704299BB61F00BB2E0F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CB4E5708299BB6C200BB2E0F /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		CB4E5709299BB6C200BB2E0F /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		CB4E570D299BBB6F00BB2E0F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CB4E570E299BBB6F00BB2E0F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		CB4E5713299BBC9A00BB2E0F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CB4E5716299BBD1200BB2E0F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CB4E5717299BBD1200BB2E0F /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +164,10 @@
 		CB4E56EF299BA87000BB2E0F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB4E5715299BBD0400BB2E0F /* Map */,
+				CB4E570C299BBB5B00BB2E0F /* DetailView */,
+				CB4E5706299BB6A000BB2E0F /* UserView */,
+				CB4E5703299BB5EC00BB2E0F /* TapBar */,
 				CB4E56F0299BA87900BB2E0F /* TableView */,
 			);
 			path = View;
@@ -166,7 +186,8 @@
 		CB4E56F9299BAE0200BB2E0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CB4E56FA299BAE1400BB2E0F /* Heroe.swift */,
+				CB4E5712299BBC8400BB2E0F /* Managers */,
+				CB4E5711299BBC7A00BB2E0F /* Data */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +199,57 @@
 				CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CB4E5703299BB5EC00BB2E0F /* TapBar */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E5704299BB61F00BB2E0F /* TabBarController.swift */,
+			);
+			path = TapBar;
+			sourceTree = "<group>";
+		};
+		CB4E5706299BB6A000BB2E0F /* UserView */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E5708299BB6C200BB2E0F /* UserViewController.swift */,
+				CB4E5709299BB6C200BB2E0F /* UserViewController.xib */,
+			);
+			path = UserView;
+			sourceTree = "<group>";
+		};
+		CB4E570C299BBB5B00BB2E0F /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E570D299BBB6F00BB2E0F /* DetailViewController.swift */,
+				CB4E570E299BBB6F00BB2E0F /* DetailViewController.xib */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		CB4E5711299BBC7A00BB2E0F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E56FA299BAE1400BB2E0F /* Heroe.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CB4E5712299BBC8400BB2E0F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E5713299BBC9A00BB2E0F /* Network.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CB4E5715299BBD0400BB2E0F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E5716299BBD1200BB2E0F /* MapViewController.swift */,
+				CB4E5717299BBD1200BB2E0F /* MapViewController.xib */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +357,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4E56CC299BA63900BB2E0F /* LaunchScreen.storyboard in Resources */,
+				CB4E570B299BB6C200BB2E0F /* UserViewController.xib in Resources */,
+				CB4E5710299BBB6F00BB2E0F /* DetailViewController.xib in Resources */,
+				CB4E5719299BBD1200BB2E0F /* MapViewController.xib in Resources */,
 				CB4E5700299BAF6F00BB2E0F /* CellViewController.xib in Resources */,
 				CB4E56C9299BA63900BB2E0F /* Assets.xcassets in Resources */,
 				CB4E56C4299BA63700BB2E0F /* Main.storyboard in Resources */,
@@ -313,9 +388,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4E570F299BBB6F00BB2E0F /* DetailViewController.swift in Sources */,
 				CB4E56FF299BAF6F00BB2E0F /* CellViewController.swift in Sources */,
+				CB4E5714299BBC9A00BB2E0F /* Network.swift in Sources */,
+				CB4E570A299BB6C200BB2E0F /* UserViewController.swift in Sources */,
 				CB4E56C1299BA63700BB2E0F /* ViewController.swift in Sources */,
 				CB4E56BD299BA63700BB2E0F /* AppDelegate.swift in Sources */,
+				CB4E5718299BBD1200BB2E0F /* MapViewController.swift in Sources */,
+				CB4E5705299BB61F00BB2E0F /* TabBarController.swift in Sources */,
 				CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */,
 				CB4E56C7299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */,
 				CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */,
