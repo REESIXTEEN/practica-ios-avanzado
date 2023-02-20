@@ -15,6 +15,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var heroes: [Heroe] = []
     var searchedHeroes: [Heroe] = []
     
+    let viewModel: TableViewModel = TableViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,23 +29,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let xib = UINib(nibName: "TableCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: "customTableCell")
         
-        //let token = LocalDataLayer.shared.getValue(key: .token)
-        /*Network.shared.fetchHeroes(token: token) { [weak self] allHeroes, error in
-            guard let self = self else { return }
-            
-            if let allHeroes = allHeroes {
-                self.heroes = allHeroes
-                self.searchHeroes = allHeroes
-                LocalDataLayer.shared.save(heroes: allHeroes)
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }else{
-                print("Error fetching heroes: ", error?.localizedDescription ?? "")
-            }
-            
-        }*/
+        if !viewModel.checkLogin() {
+            let loginViewController = LoginViewController()
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(loginViewController, animated: true)
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
