@@ -24,6 +24,10 @@ class UserViewController: UIViewController {
     
     
     @IBAction func logOutTapped(_ sender: UIButton) {
+        userViewModel.logOut()
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(loginViewController, animated: true)
     }
     
     @IBAction func deleteTapped(_ sender: UIButton) {

@@ -30,31 +30,6 @@ class KeyChain {
         }
     }
     
-//    func updateData() {
-//
-//        // definimos un usuario
-//        let username = "peter"
-//        let password = "jkjkjkjsd".data(using: .utf8)!
-//
-//        // Preparamos la consulta
-//        let query: [String: Any] = [
-//            kSecClass as String: kSecClassGenericPassword,
-//            kSecAttrAccount as String: username
-//        ]
-//
-//        // Preparamos los atributos necesarios
-//        let attributes: [String: Any] = [
-//            kSecValueData as String: password
-//        ]
-//
-//        if (SecItemUpdate(query as CFDictionary, attributes as CFDictionary)) == noErr {
-//            debugPrint("Información del usuario actualizada con éxito")
-//        } else {
-//            debugPrint("Se produjo un error al actualizar la información del usuario")
-//        }
-//
-//    }
-    
     func readData(key: keys) -> String {
         
         let query: [String: Any] = [

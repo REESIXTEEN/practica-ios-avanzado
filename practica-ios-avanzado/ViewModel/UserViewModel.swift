@@ -18,6 +18,12 @@ class UserViewModel {
         keyChain.deleteData(key: .token)
     }
     
+    func logOut() {
+        keyChain.deleteData(key: .user)
+        keyChain.deleteData(key: .password)
+        keyChain.deleteData(key: .token)
+    }
+    
     func readData() -> String {
         let user = keyChain.readData(key: .user)
         return user != "" ? user : "Error loading user email"

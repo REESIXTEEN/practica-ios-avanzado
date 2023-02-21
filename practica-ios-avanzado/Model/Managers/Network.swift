@@ -64,41 +64,41 @@ final class Network {
         task.resume()
     }
     
-    func fetchHeroes(token: String?, completion: @escaping ([Heroe]?, Error?) -> Void){
-        guard let url = URL(string: "https://dragonball.keepcoding.education//api/heros/all") else {
-            completion(nil, NetworkError.malformedURL)
-            return
-        }
-        
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
-        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
-            guard error == nil else{
-                completion(nil,error)
-                return
-            }
-            
-            guard let data = data else{
-                completion(nil, NetworkError.noData)
-                return
-            }
-            
-            guard let heroes = try? JSONDecoder().decode([Heroe].self, from: data) else{
-                completion(nil, NetworkError.decodignFailed)
-                return
-            }
-            
-            completion(heroes, nil)
-        }
-        
-        task.resume()
-    }
+//    func fetchHeroes(token: String?, completion: @escaping ([Heroe]?, Error?) -> Void){
+//        guard let url = URL(string: "https://dragonball.keepcoding.education//api/heros/all") else {
+//            completion(nil, NetworkError.malformedURL)
+//            return
+//        }
+//        
+//        var urlComponents = URLComponents()
+//        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
+//        
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "POST"
+//        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+//        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+//        
+//        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+//            guard error == nil else{
+//                completion(nil,error)
+//                return
+//            }
+//            
+//            guard let data = data else{
+//                completion(nil, NetworkError.noData)
+//                return
+//            }
+//            
+//            guard let heroes = try? JSONDecoder().decode([Heroe].self, from: data) else{
+//                completion(nil, NetworkError.decodignFailed)
+//                return
+//            }
+//            
+//            completion(heroes, nil)
+//        }
+//        
+//        task.resume()
+//    }
 
     
     func getApiData() {

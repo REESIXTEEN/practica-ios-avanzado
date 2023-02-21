@@ -17,7 +17,6 @@
 		CB4E56E3299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56E2299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift */; };
 		CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56F5299BAB6D00BB2E0F /* TableViewController.swift */; };
 		CB4E56F8299BAB6D00BB2E0F /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56F6299BAB6D00BB2E0F /* TableViewController.xib */; };
-		CB4E56FB299BAE1400BB2E0F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56FA299BAE1400BB2E0F /* Heroe.swift */; };
 		CB4E56FF299BAF6F00BB2E0F /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */; };
 		CB4E5700299BAF6F00BB2E0F /* CellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */; };
 		CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5701299BB4C500BB2E0F /* Extensions.swift */; };
@@ -29,12 +28,14 @@
 		CB4E5714299BBC9A00BB2E0F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5713299BBC9A00BB2E0F /* Network.swift */; };
 		CB4E5718299BBD1200BB2E0F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E5716299BBD1200BB2E0F /* MapViewController.swift */; };
 		CB4E5719299BBD1200BB2E0F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E5717299BBD1200BB2E0F /* MapViewController.xib */; };
-		CB4E571E299D3A5E00BB2E0F /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E571D299D3A5E00BB2E0F /* TableViewModel.swift */; };
 		CB4E574329A391C100BB2E0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574129A391C100BB2E0F /* LoginViewController.swift */; };
 		CB4E574429A391C100BB2E0F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E574229A391C100BB2E0F /* LoginViewController.xib */; };
 		CB4E574629A39D1B00BB2E0F /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574529A39D1B00BB2E0F /* KeyChain.swift */; };
 		CB4E574829A3AD0A00BB2E0F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574729A3AD0A00BB2E0F /* LoginViewModel.swift */; };
 		CB4E574A29A4E6C900BB2E0F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574929A4E6C900BB2E0F /* UserViewModel.swift */; };
+		CB4E574C29A4F30400BB2E0F /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574B29A4F30400BB2E0F /* CoreData.swift */; };
+		CB4E575429A5047200BB2E0F /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E575329A5047200BB2E0F /* TableViewModel.swift */; };
+		CB4E575629A505FF00BB2E0F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E575529A505FF00BB2E0F /* Heroe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,6 @@
 		CB4E56E2299BA63900BB2E0F /* practica_ios_avanzadoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practica_ios_avanzadoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB4E56F5299BAB6D00BB2E0F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CB4E56F6299BAB6D00BB2E0F /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		CB4E56FA299BAE1400BB2E0F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
 		CB4E56FD299BAF6F00BB2E0F /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		CB4E56FE299BAF6F00BB2E0F /* CellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellViewController.xib; sourceTree = "<group>"; };
 		CB4E5701299BB4C500BB2E0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -81,12 +81,14 @@
 		CB4E5713299BBC9A00BB2E0F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		CB4E5716299BBD1200BB2E0F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CB4E5717299BBD1200BB2E0F /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
-		CB4E571D299D3A5E00BB2E0F /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewModel.swift; path = ../../../../../../TableViewModel.swift; sourceTree = "<group>"; };
 		CB4E574129A391C100BB2E0F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB4E574229A391C100BB2E0F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CB4E574529A39D1B00BB2E0F /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		CB4E574729A3AD0A00BB2E0F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CB4E574929A4E6C900BB2E0F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		CB4E574B29A4F30400BB2E0F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		CB4E575329A5047200BB2E0F /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		CB4E575529A505FF00BB2E0F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,7 +240,7 @@
 		CB4E5711299BBC7A00BB2E0F /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CB4E56FA299BAE1400BB2E0F /* Heroe.swift */,
+				CB4E575529A505FF00BB2E0F /* Heroe.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -248,6 +250,7 @@
 			children = (
 				CB4E5713299BBC9A00BB2E0F /* Network.swift */,
 				CB4E574529A39D1B00BB2E0F /* KeyChain.swift */,
+				CB4E574B29A4F30400BB2E0F /* CoreData.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -264,9 +267,9 @@
 		CB4E571C299D397300BB2E0F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CB4E571D299D3A5E00BB2E0F /* TableViewModel.swift */,
 				CB4E574729A3AD0A00BB2E0F /* LoginViewModel.swift */,
 				CB4E574929A4E6C900BB2E0F /* UserViewModel.swift */,
+				CB4E575329A5047200BB2E0F /* TableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -420,6 +423,8 @@
 				CB4E570F299BBB6F00BB2E0F /* DetailViewController.swift in Sources */,
 				CB4E56FF299BAF6F00BB2E0F /* CellViewController.swift in Sources */,
 				CB4E5714299BBC9A00BB2E0F /* Network.swift in Sources */,
+				CB4E574C29A4F30400BB2E0F /* CoreData.swift in Sources */,
+				CB4E575629A505FF00BB2E0F /* Heroe.swift in Sources */,
 				CB4E574829A3AD0A00BB2E0F /* LoginViewModel.swift in Sources */,
 				CB4E570A299BB6C200BB2E0F /* UserViewController.swift in Sources */,
 				CB4E56BD299BA63700BB2E0F /* AppDelegate.swift in Sources */,
@@ -429,10 +434,9 @@
 				CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */,
 				CB4E56C7299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */,
 				CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */,
+				CB4E575429A5047200BB2E0F /* TableViewModel.swift in Sources */,
 				CB4E56BF299BA63700BB2E0F /* SceneDelegate.swift in Sources */,
 				CB4E574A29A4E6C900BB2E0F /* UserViewModel.swift in Sources */,
-				CB4E571E299D3A5E00BB2E0F /* TableViewModel.swift in Sources */,
-				CB4E56FB299BAE1400BB2E0F /* Heroe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

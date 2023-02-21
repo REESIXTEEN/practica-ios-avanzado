@@ -34,6 +34,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             loginViewController.modalPresentationStyle = .fullScreen
             self.navigationController?.present(loginViewController, animated: true)
         }
+        else {
+            
+        }
+        
+        
         
         
     }
