@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserViewController" customModule="practica_ios_avanzado" customModuleProvider="target">
             <connections>
+                <outlet property="deleteBtn" destination="FV4-Zw-rN0" id="flN-sR-JHy"/>
+                <outlet property="emailLabel" destination="G1j-Id-3Sy" id="rhk-UF-PXv"/>
+                <outlet property="logOutBtn" destination="1Fb-gU-a5w" id="vz7-hM-Hhv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,6 +43,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="LogOut"/>
+                    <connections>
+                        <action selector="logOutTapped:" destination="-1" eventType="touchUpInside" id="eKW-0A-eID"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FV4-Zw-rN0">
                     <rect key="frame" x="16" y="593" width="361" height="35"/>
@@ -51,6 +57,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="DeleteData">
                         <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="deleteTapped:" destination="-1" eventType="touchUpInside" id="mya-ap-sPx"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -28,10 +28,10 @@ class LoginViewController: UIViewController {
         let userEmail = emailText.text
         let password = passwordText.text
         
-        loginViewModel.login(userEmail: userEmail, password: password){ [weak self] msg in
-            if msg != .success {
+        loginViewModel.login(userEmail: userEmail, password: password){ [weak self] result in
+            if result != .success {
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error", message: msg.rawValue, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error", message: result.rawValue, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default)
                     alert.addAction(okAction)
                     self?.present(alert, animated: true, completion: nil)

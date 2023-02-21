@@ -11,7 +11,7 @@ enum loginResult: String {
     case email = "Incorrect email"
     case password = "Empty password"
     case success = "Success"
-    case error = "An error has ocurred during login"
+    case error = "An error has ocurred during login, maybe user and email incorrects"
 }
 
 class LoginViewModel {
@@ -26,7 +26,9 @@ class LoginViewModel {
         network.login(email: userEmail, password: password) { token, error in
             guard let token else {return completion(.error)}
             
-            self.keyChain.saveData(key: keys.token.rawValue, keyValue: token)
+            self.keyChain.saveData(key: .token, keyValue: token)
+            self.keyChain.saveData(key: .user, keyValue: userEmail)
+            self.keyChain.saveData(key: .password, keyValue: password)
             
             return completion(.success)
             

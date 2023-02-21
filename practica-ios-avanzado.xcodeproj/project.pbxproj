@@ -34,6 +34,7 @@
 		CB4E574429A391C100BB2E0F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E574229A391C100BB2E0F /* LoginViewController.xib */; };
 		CB4E574629A39D1B00BB2E0F /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574529A39D1B00BB2E0F /* KeyChain.swift */; };
 		CB4E574829A3AD0A00BB2E0F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574729A3AD0A00BB2E0F /* LoginViewModel.swift */; };
+		CB4E574A29A4E6C900BB2E0F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E574929A4E6C900BB2E0F /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		CB4E574229A391C100BB2E0F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CB4E574529A39D1B00BB2E0F /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		CB4E574729A3AD0A00BB2E0F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CB4E574929A4E6C900BB2E0F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 			children = (
 				CB4E571D299D3A5E00BB2E0F /* TableViewModel.swift */,
 				CB4E574729A3AD0A00BB2E0F /* LoginViewModel.swift */,
+				CB4E574929A4E6C900BB2E0F /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				CB4E56C7299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */,
 				CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */,
 				CB4E56BF299BA63700BB2E0F /* SceneDelegate.swift in Sources */,
+				CB4E574A29A4E6C900BB2E0F /* UserViewModel.swift in Sources */,
 				CB4E571E299D3A5E00BB2E0F /* TableViewModel.swift in Sources */,
 				CB4E56FB299BAE1400BB2E0F /* Heroe.swift in Sources */,
 			);

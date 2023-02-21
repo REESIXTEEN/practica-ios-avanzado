@@ -11,59 +11,55 @@ import Security
 enum keys: String {
     case token = "token"
     case user = "user"
+    case password = "password"
 }
 
 class KeyChain {
     
-    func deleteData() {
-        // definimos un usuario
-        let username = "peter"
+    func deleteData(key: keys) {
         
-        // Preparamos la consulta
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: username
+            kSecAttrAccount as String: key.rawValue
         ]
         
-        // ejecutamos la consulta para eliminar
         if (SecItemDelete(query as CFDictionary)) == noErr {
-            debugPrint("Información del usuario eliminada con éxito")
+            debugPrint("Data for key:\(key.rawValue) successfully deleted")
         } else {
-            debugPrint("Se produjo un error al eliminar la información del usuario")
+            debugPrint("Error deleting data for key:\(key.rawValue)")
         }
     }
     
-    func updateData() {
-        
-        // definimos un usuario
-        let username = "peter"
-        let password = "jkjkjkjsd".data(using: .utf8)!
-        
-        // Preparamos la consulta
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: username
-        ]
-        
-        // Preparamos los atributos necesarios
-        let attributes: [String: Any] = [
-            kSecValueData as String: password
-        ]
-        
-        if (SecItemUpdate(query as CFDictionary, attributes as CFDictionary)) == noErr {
-            debugPrint("Información del usuario actualizada con éxito")
-        } else {
-            debugPrint("Se produjo un error al actualizar la información del usuario")
-        }
-        
-    }
+//    func updateData() {
+//
+//        // definimos un usuario
+//        let username = "peter"
+//        let password = "jkjkjkjsd".data(using: .utf8)!
+//
+//        // Preparamos la consulta
+//        let query: [String: Any] = [
+//            kSecClass as String: kSecClassGenericPassword,
+//            kSecAttrAccount as String: username
+//        ]
+//
+//        // Preparamos los atributos necesarios
+//        let attributes: [String: Any] = [
+//            kSecValueData as String: password
+//        ]
+//
+//        if (SecItemUpdate(query as CFDictionary, attributes as CFDictionary)) == noErr {
+//            debugPrint("Información del usuario actualizada con éxito")
+//        } else {
+//            debugPrint("Se produjo un error al actualizar la información del usuario")
+//        }
+//
+//    }
     
-    func readData(key: keys) {
+    func readData(key: keys) -> String {
         
-        // Preparamos la consulta
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key,
+            kSecAttrAccount as String: key.rawValue,
             kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnAttributes as String: true,
             kSecReturnData as String: true
@@ -74,38 +70,40 @@ class KeyChain {
         if SecItemCopyMatching(query as CFDictionary, &item) == noErr {
             
             if let existingItem = item as? [String: Any],
-               let username = existingItem[kSecAttrAccount as String] as? String,
-               let passwordData = existingItem[kSecValueData as String] as? Data,
-               let password = String(data: passwordData, encoding: .utf8) {
+               let itemData = existingItem[kSecValueData as String] as? Data,
+               let data = String(data: itemData, encoding: .utf8) {
+                return data
             }
             
         } else {
-            debugPrint("Error reading KeyChain data for key: \(key)")
+            debugPrint("Error reading KeyChain data for key: \(key.rawValue)")
         }
+        
+        return ""
         
     }
     
-    func saveData(key: String, keyValue: String) {
+    func saveData(key: keys, keyValue: String) {
         
         let keyValue = keyValue.data(using: .utf8)!
         let attributes: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key,
+            kSecAttrAccount as String: key.rawValue,
             kSecValueData as String: keyValue
         ]
         
         if SecItemAdd(attributes as CFDictionary, nil) == noErr {
-            debugPrint("Data with key:\(key) saved successfully")
+            debugPrint("Data with key:\(key.rawValue) saved successfully")
         } else {
-            debugPrint("Error saving data with key: \(key)")
+            debugPrint("Error saving data with key: \(key.rawValue)")
         }
         
     }
     
-    func checkKeyExists(key:String) -> Bool  {
+    func checkKeyExists(key: keys) -> Bool  {
         let query: [String:Any] = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key,
+            kSecAttrAccount as String: key.rawValue,
             kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnAttributes as String: true
         ]
