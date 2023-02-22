@@ -10,10 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="practica_ios_avanzado" customModuleProvider="target">
             <connections>
-                <outlet property="description" destination="Jqd-6P-gur" id="heW-jy-Cjf"/>
-                <outlet property="heroeDescription" destination="Jqd-6P-gur" id="Ckx-32-Kfm"/>
+                <outlet property="heroName" destination="fJS-Q0-JHU" id="qvn-3h-cQM"/>
+                <outlet property="heroeDescription" destination="Jqd-6P-gur" id="TVn-Xz-AII"/>
                 <outlet property="image" destination="Jij-dX-mbu" id="vmt-I4-6xd"/>
-                <outlet property="name" destination="fJS-Q0-JHU" id="7JX-BA-rGJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

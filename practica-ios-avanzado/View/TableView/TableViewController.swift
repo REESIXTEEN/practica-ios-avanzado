@@ -36,9 +36,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else {
             viewModel.getHeroes(){ [weak self] heroes in
+                self?.heroes = heroes
+                self?.searchedHeroes = heroes
                 DispatchQueue.main.async {
-                    self?.heroes = heroes
-                    self?.searchedHeroes = heroes
                     self?.tableView.reloadData()
                 }
             }
@@ -60,7 +60,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        heroes.count
+        searchedHeroes.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

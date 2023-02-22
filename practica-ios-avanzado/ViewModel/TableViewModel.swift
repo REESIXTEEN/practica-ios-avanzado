@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 
 class TableViewModel {
@@ -21,18 +22,37 @@ class TableViewModel {
     }
     
     func getHeroes(completion: @escaping ([Heroe]) -> Void) {
-        let userToken = keyChain.readData(key: .token)
-        network.fetchHeroes(token: userToken) { heroes, error in
-            guard let heroes else {
-                debugPrint("Error getting the heroes from the api")
-                return completion([])
+        let heroes = getHeroesFromCoreData()
+
+        if heroes.isEmpty {
+            let userToken = keyChain.readData(key: .token)
+            network.fetchHeroes(token: userToken) { heroes, error in
+                guard let heroes else {
+                    debugPrint("Error getting the heroes from the api")
+                    return completion([])
+                }
+                return completion(heroes)
             }
-            return completion(heroes)
+        }else {
+            
         }
+        
+        
     }
     
     
-    
+    private func getHeroesFromCoreData() -> [HeroeEntity] {
+        let heroeFetch: NSFetchRequest<HeroeEntity> = HeroeEntity.fetchRequest()
+        
+        do {
+            let result = try context.fetch(heroeFetch)
+            return result
+            
+        } catch let error as NSError {
+            debugPrint("Error getting data from core data -> \(error)")
+            return []
+        }
+    }
     
     
     
