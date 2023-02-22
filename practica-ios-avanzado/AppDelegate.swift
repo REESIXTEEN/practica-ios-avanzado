@@ -11,7 +11,7 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    lazy var coreDataManager: CoreData = .init(modelName: "Heroe")
+    lazy var coreDataManager: CoreData = .init(modelName: "HeroeEntity")
     
     static let sharedAppDelegate: AppDelegate = {
        

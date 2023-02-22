@@ -26,7 +26,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         navigationItem.title = "Heroes"
         
-        let xib = UINib(nibName: "TableCell", bundle: nil)
+        let xib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: "customTableCell")
         
         if !viewModel.checkLogin() {
@@ -35,20 +35,23 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.navigationController?.present(loginViewController, animated: true)
         }
         else {
-            
+            viewModel.getHeroes(){ [weak self] heroes in
+                DispatchQueue.main.async {
+                    self?.heroes = heroes
+                    self?.searchedHeroes = heroes
+                    self?.tableView.reloadData()
+                }
+            }
         }
-        
-        
-        
-        
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! CellViewController
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! TableViewCell
         let heroe = searchedHeroes[indexPath.row]
         cell.cellImage.setImage(url: heroe.photo)
-        cell.nameLabel.text = heroe.name
-        cell.descriptionLabel.text = heroe.description
+        cell.cellName.text = heroe.name
+        cell.cellDetails.text = heroe.description
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
         

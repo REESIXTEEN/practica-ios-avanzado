@@ -20,6 +20,20 @@ class TableViewModel {
         return loginStatus
     }
     
+    func getHeroes(completion: @escaping ([Heroe]) -> Void) {
+        let userToken = keyChain.readData(key: .token)
+        network.fetchHeroes(token: userToken) { heroes, error in
+            guard let heroes else {
+                debugPrint("Error getting the heroes from the api")
+                return completion([])
+            }
+            return completion(heroes)
+        }
+    }
+    
+    
+    
+    
     
     
     
