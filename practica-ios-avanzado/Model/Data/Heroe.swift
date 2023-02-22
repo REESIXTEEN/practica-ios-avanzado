@@ -13,4 +13,6 @@ struct Heroe: Codable{
     let photo: String
     let description: String
     let favorite: Bool
+    let latitude: Double?
+    let longitude: Double?
 }

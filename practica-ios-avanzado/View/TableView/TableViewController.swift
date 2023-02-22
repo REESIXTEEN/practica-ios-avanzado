@@ -12,8 +12,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var heroes: [Heroe] = []
-    var searchedHeroes: [Heroe] = []
+    var heroes: [HeroeEntity] = []
+    var searchedHeroes: [HeroeEntity] = []
     
     let viewModel: TableViewModel = TableViewModel()
     
@@ -49,9 +49,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! TableViewCell
         let heroe = searchedHeroes[indexPath.row]
-        cell.cellImage.setImage(url: heroe.photo)
+        cell.cellImage.setImage(url: heroe.photo!)
         cell.cellName.text = heroe.name
-        cell.cellDetails.text = heroe.description
+        cell.cellDetails.text = heroe.details
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
         
@@ -73,12 +73,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         searchedHeroes = searchText.isEmpty ? heroes : heroes.filter { heroe in
-            return heroe.name.range(of: searchText, options: .caseInsensitive, range: nil,locale: nil) != nil
+            return heroe.name?.range(of: searchText, options: .caseInsensitive, range: nil,locale: nil) != nil
         }
         tableView.reloadData()
     }
-    
-    
-
 
 }

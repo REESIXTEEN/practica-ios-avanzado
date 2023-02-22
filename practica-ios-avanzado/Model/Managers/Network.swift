@@ -100,6 +100,5 @@ final class Network {
         task.resume()
     }
 
-
 }
 

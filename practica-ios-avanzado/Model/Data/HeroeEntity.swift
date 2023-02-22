@@ -24,7 +24,7 @@ public extension HeroeEntity {
     @NSManaged var id: String
     @NSManaged var favorite: Bool
     @NSManaged var photo: String?
-    @NSManaged var latitude: String?
-    @NSManaged var longitude: String?
+    @NSManaged var latitude: Double
+    @NSManaged var longitude: Double
     
 }

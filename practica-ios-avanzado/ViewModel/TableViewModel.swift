@@ -21,8 +21,8 @@ class TableViewModel {
         return loginStatus
     }
     
-    func getHeroes(completion: @escaping ([Heroe]) -> Void) {
-        let heroes = getHeroesFromCoreData()
+    func getHeroes(completion: @escaping ([HeroeEntity]) -> Void) {
+        let heroes = readFromCoreData()
 
         if heroes.isEmpty {
             let userToken = keyChain.readData(key: .token)
@@ -31,17 +31,17 @@ class TableViewModel {
                     debugPrint("Error getting the heroes from the api")
                     return completion([])
                 }
-                return completion(heroes)
+                let nsHeroes = self.convertData(heroes)
+                self.saveIntoCoreData()
+                return completion(nsHeroes)
             }
-        }else {
-            
+        }else{
+            return completion(heroes)
         }
-        
-        
     }
     
     
-    private func getHeroesFromCoreData() -> [HeroeEntity] {
+    private func readFromCoreData() -> [HeroeEntity] {
         let heroeFetch: NSFetchRequest<HeroeEntity> = HeroeEntity.fetchRequest()
         
         do {
@@ -53,7 +53,32 @@ class TableViewModel {
             return []
         }
     }
+
     
+    private func convertData(_ heroes: [Heroe]) -> [HeroeEntity] {
+        var nsHeroes: [HeroeEntity] = []
+        for heroe in heroes {
+            let newHero: HeroeEntity = HeroeEntity(context: context)
+            newHero.id = heroe.id
+            newHero.name = heroe.name
+            newHero.photo = heroe.photo
+            newHero.details = heroe.description
+            newHero.favorite = heroe.favorite
+            newHero.latitude = 0.0
+            newHero.longitude = 0.0
+            nsHeroes.append(newHero)
+        }
+        return nsHeroes
+    }
+    
+    
+    private func saveIntoCoreData() {
+        do {
+            try context.save()
+        } catch let error {
+            debugPrint("Error saving data into CoreData. Error: \(error)")
+        }
+    }
     
     
     

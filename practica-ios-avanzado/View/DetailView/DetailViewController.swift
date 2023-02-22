@@ -15,16 +15,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var heroName: UILabel!
     @IBOutlet weak var image: UIImageView!
     
-    var heroe: Heroe!
+    var heroe: HeroeEntity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = heroe.name
         
-        image.setImage(url: heroe.photo)
+        image.setImage(url: heroe.photo!)
         heroName.text = heroe.name
-        heroeDescription.text = heroe.description
+        heroeDescription.text = heroe.details
 
     }
 

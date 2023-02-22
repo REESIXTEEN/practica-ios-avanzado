@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CB4E56BD299BA63700BB2E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56BC299BA63700BB2E0F /* AppDelegate.swift */; };
 		CB4E56BF299BA63700BB2E0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56BE299BA63700BB2E0F /* SceneDelegate.swift */; };
-		CB4E56C7299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56C5299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld */; };
 		CB4E56C9299BA63900BB2E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56C8299BA63900BB2E0F /* Assets.xcassets */; };
 		CB4E56CC299BA63900BB2E0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4E56CA299BA63900BB2E0F /* LaunchScreen.storyboard */; };
 		CB4E56D7299BA63900BB2E0F /* practica_ios_avanzadoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E56D6299BA63900BB2E0F /* practica_ios_avanzadoTests.swift */; };
@@ -37,6 +36,7 @@
 		CB4E575B29A6375500BB2E0F /* HeroeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E575A29A6375400BB2E0F /* HeroeEntity.swift */; };
 		CB4E575F29A64BAB00BB2E0F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E575D29A64BAB00BB2E0F /* TableViewCell.swift */; };
 		CB4E576029A64BAB00BB2E0F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4E575E29A64BAB00BB2E0F /* TableViewCell.xib */; };
+		CB4E576829A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB4E576529A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 		CB4E56B9299BA63700BB2E0F /* practica-ios-avanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "practica-ios-avanzado.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4E56BC299BA63700BB2E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB4E56BE299BA63700BB2E0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CB4E56C6299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = practica_ios_avanzado.xcdatamodel; sourceTree = "<group>"; };
 		CB4E56C8299BA63900BB2E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB4E56CB299BA63900BB2E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB4E56CD299BA63900BB2E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,10 +87,11 @@
 		CB4E574B29A4F30400BB2E0F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		CB4E575329A5047200BB2E0F /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		CB4E575529A505FF00BB2E0F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
-		CB4E575929A636B500BB2E0F /* practica_ios_avanzado 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "practica_ios_avanzado 2.xcdatamodel"; sourceTree = "<group>"; };
 		CB4E575A29A6375400BB2E0F /* HeroeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeEntity.swift; sourceTree = "<group>"; };
 		CB4E575D29A64BAB00BB2E0F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CB4E575E29A64BAB00BB2E0F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		CB4E576629A6753E00BB2E0F /* practica_ios_avanzado 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "practica_ios_avanzado 2.xcdatamodel"; sourceTree = "<group>"; };
+		CB4E576729A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = practica_ios_avanzado.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 		CB4E56B0299BA63700BB2E0F = {
 			isa = PBXGroup;
 			children = (
-				CB4E56C5299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld */,
+				CB4E576529A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodeld */,
 				CB4E56BB299BA63700BB2E0F /* practica-ios-avanzado */,
 				CB4E56D5299BA63900BB2E0F /* practica-ios-avanzadoTests */,
 				CB4E56DF299BA63900BB2E0F /* practica-ios-avanzadoUITests */,
@@ -424,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4E574329A391C100BB2E0F /* LoginViewController.swift in Sources */,
+				CB4E576829A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */,
 				CB4E570F299BBB6F00BB2E0F /* DetailViewController.swift in Sources */,
 				CB4E5714299BBC9A00BB2E0F /* Network.swift in Sources */,
 				CB4E574C29A4F30400BB2E0F /* CoreData.swift in Sources */,
@@ -437,7 +438,6 @@
 				CB4E574629A39D1B00BB2E0F /* KeyChain.swift in Sources */,
 				CB4E5705299BB61F00BB2E0F /* TabBarController.swift in Sources */,
 				CB4E5702299BB4C500BB2E0F /* Extensions.swift in Sources */,
-				CB4E56C7299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld in Sources */,
 				CB4E56F7299BAB6D00BB2E0F /* TableViewController.swift in Sources */,
 				CB4E575429A5047200BB2E0F /* TableViewModel.swift in Sources */,
 				CB4E56BF299BA63700BB2E0F /* SceneDelegate.swift in Sources */,
@@ -771,13 +771,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CB4E56C5299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodeld */ = {
+		CB4E576529A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CB4E575929A636B500BB2E0F /* practica_ios_avanzado 2.xcdatamodel */,
-				CB4E56C6299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodel */,
+				CB4E576629A6753E00BB2E0F /* practica_ios_avanzado 2.xcdatamodel */,
+				CB4E576729A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodel */,
 			);
-			currentVersion = CB4E56C6299BA63700BB2E0F /* practica_ios_avanzado.xcdatamodel */;
+			currentVersion = CB4E576729A6753E00BB2E0F /* practica_ios_avanzado.xcdatamodel */;
 			path = practica_ios_avanzado.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
