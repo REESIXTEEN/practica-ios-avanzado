@@ -64,7 +64,7 @@ final class Network {
         task.resume()
     }
     
-    func fetchHeroes(token: String?, completion: @escaping ([Heroe]?, Error?) -> Void){
+    func fetchHeroes(token: String, completion: @escaping ([Heroe]?, Error?) -> Void){
         guard let url = URL(string: "https://dragonball.keepcoding.education//api/heros/all") else {
             completion(nil, NetworkError.malformedURL)
             return
@@ -75,7 +75,7 @@ final class Network {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
@@ -95,6 +95,43 @@ final class Network {
             }
             
             completion(heroes, nil)
+        }
+        
+        task.resume()
+    }
+    
+    
+    func fetchLocation(token: String, heroeId: String, completion: @escaping (HeroeLocation?, Error?) -> Void){
+        guard let url = URL(string: "https://dragonball.keepcoding.education/api/heros/locations") else {
+            completion(nil, NetworkError.malformedURL)
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "id", value: heroeId)]
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            guard error == nil else{
+                completion(nil,error)
+                return
+            }
+            
+            guard let data = data else{
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            guard let result = try? JSONDecoder().decode([HeroeLocation].self, from: data), result.count>0 else{
+                completion(nil, NetworkError.decodignFailed)
+                return
+            }
+            
+            completion(result[0], nil)
         }
         
         task.resume()

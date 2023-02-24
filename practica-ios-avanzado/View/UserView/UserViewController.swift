@@ -31,13 +31,11 @@ class UserViewController: UIViewController {
     }
     
     @IBAction func deleteTapped(_ sender: UIButton) {
-        
         let alert = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         let yesAction = UIAlertAction(title: "Yes", style: .default){_ in
             self.userViewModel.deleteUserData()
         }
-        
         alert.addAction(cancelAction)
         alert.addAction(yesAction)
         

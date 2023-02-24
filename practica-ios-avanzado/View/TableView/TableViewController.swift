@@ -34,17 +34,23 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             loginViewController.modalPresentationStyle = .fullScreen
             self.navigationController?.present(loginViewController, animated: true)
         }
-        else {
-            viewModel.getHeroes(){ [weak self] heroes in
-                self?.heroes = heroes
-                self?.searchedHeroes = heroes
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
+        viewModel.getHeroes(){ [weak self] heroes in
+            self?.heroes = heroes
+            self?.searchedHeroes = heroes
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
             }
         }
-
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        guard heroes != nil else{
+//           heroes = []
+//           searchedHeroes = []
+//        }
+//    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! TableViewCell
@@ -56,12 +62,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.selectionStyle = .none
         
         return cell
-        
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         searchedHeroes.count
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let heroe = searchedHeroes[indexPath.row]

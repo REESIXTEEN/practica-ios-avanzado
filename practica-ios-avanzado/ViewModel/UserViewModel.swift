@@ -6,16 +6,15 @@
 //
 
 import Foundation
+import CoreData
 
 class UserViewModel {
     
     let keyChain = KeyChain()
-    
+    var context = AppDelegate.sharedAppDelegate.coreDataManager.managedContext
     
     func deleteUserData(){
-        keyChain.deleteData(key: .user)
-        keyChain.deleteData(key: .password)
-        keyChain.deleteData(key: .token)
+        deleteCoreData()
     }
     
     func logOut() {
@@ -28,4 +27,20 @@ class UserViewModel {
         let user = keyChain.readData(key: .user)
         return user != "" ? user : "Error loading user email"
     }
+    
+    private func deleteCoreData() {
+        let fetch: NSFetchRequest<HeroeEntity> = HeroeEntity.fetchRequest()
+        
+        do {
+            let heroes = try context.fetch(fetch)
+            for heroe in heroes {
+                context.delete(heroe)
+            }
+            try context.save()
+            debugPrint("Data from CoreData deleted.")
+        } catch let error as NSError {
+            debugPrint("Error deleting data from CoreData. Error: \(error)")
+        }
+    }
+    
 }

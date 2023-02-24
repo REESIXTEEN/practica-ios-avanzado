@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="practica_ios_avanzado" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="YBo-FI-aqa" id="Enh-he-N3Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

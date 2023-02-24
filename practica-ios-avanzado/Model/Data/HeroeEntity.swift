@@ -16,7 +16,10 @@ public class HeroeEntity: NSManagedObject, Identifiable {
 public extension HeroeEntity {
     
     @nonobjc class func fetchRequest() -> NSFetchRequest<HeroeEntity> {
-        return NSFetchRequest<HeroeEntity>(entityName: "HeroeEntity")
+        let fetch =  NSFetchRequest<HeroeEntity>(entityName: "HeroeEntity")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetch.sortDescriptors = [sortDescriptor]
+        return fetch
     }
     
     @NSManaged var name: String?
