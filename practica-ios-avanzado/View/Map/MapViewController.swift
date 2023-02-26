@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, MyViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let viewModel: MapViewModel = MapViewModel()
@@ -28,29 +28,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         mapView.mapType = .standard
         
-        for hero in heroes {
-            addCustomPin(hero)
-        }
+        heroes.forEach({addCustomPin($0)})
 
     }
     
     private func addCustomPin(_ heroe: HeroeEntity) {
-        let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: heroe.latitude, longitude: heroe.longitude)
-        pin.title = heroe.name
-        pin.subtitle = "aazaasddececvefvefv"
+        let pin = Annotation(heroe: heroe)
         mapView.addAnnotation(pin)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
-        
-        let CalloutView = Bundle.main.loadNibNamed("CustomCallout", owner: self, options: nil)?.first as! UIView
 
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+            annotationView = MKAnnotationView(annotation: annotation as! Annotation, reuseIdentifier: "custom")
             annotationView?.canShowCallout = true
-            annotationView?.detailCalloutAccessoryView = CalloutView
+            let callout = Callout(annotation: annotation as! Annotation)
+            callout.delegate = self
+            annotationView?.detailCalloutAccessoryView = callout
         }
         else {
             annotationView?.annotation = annotation
@@ -62,8 +57,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     
+    func detailsTapped(heroe: HeroeEntity) {
+        let detailsView = DetailViewController()
+        detailsView.heroe = heroe
+        navigationController?.pushViewController(detailsView, animated: true)
+    }
 
 }
-
 
 
