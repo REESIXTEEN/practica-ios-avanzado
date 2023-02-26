@@ -46,6 +46,7 @@ class TableViewModel {
         
         do {
             let result = try context.fetch(heroeFetch)
+            debugPrint("Data readed from CoreData")
             return result
             
         } catch let error as NSError {
@@ -75,6 +76,7 @@ class TableViewModel {
     private func saveIntoCoreData() {
         do {
             try context.save()
+            debugPrint("Data saved into CoreData")
         } catch let error {
             debugPrint("Error saving data into CoreData. Error: \(error)")
         }

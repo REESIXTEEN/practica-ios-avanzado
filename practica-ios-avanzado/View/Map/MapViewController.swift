@@ -20,21 +20,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, MyViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let heroes = viewModel.getLocations()
+        self.locationManager = CLLocationManager()
+        self.locationManager?.requestWhenInUseAuthorization()
+        self.locationManager?.delegate = self
+        self.mapView.delegate = self
+        self.mapView.mapType = .standard
         
-        locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
-        locationManager?.delegate = self
-        mapView.delegate = self
-        mapView.mapType = .standard
+        viewModel.getLocations() { [weak self] heroes in
+            guard let self else { return }
+            self.addAnnotations(heroes)
+        }
         
-        heroes.forEach({addCustomPin($0)})
-
     }
     
-    private func addCustomPin(_ heroe: HeroeEntity) {
-        let pin = Annotation(heroe: heroe)
-        mapView.addAnnotation(pin)
+    private func addAnnotations(_ heroes: [HeroeEntity]) {
+        for heroe in heroes {
+            let pin = Annotation(heroe: heroe)
+            mapView.addAnnotation(pin)
+        }
+
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

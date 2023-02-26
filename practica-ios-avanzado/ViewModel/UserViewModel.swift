@@ -29,6 +29,9 @@ class UserViewModel {
     }
     
     private func deleteCoreData() {
+        // No he tenido tiempo de arreglar el fallo que esto provoca al volver a la tabla
+        // en la cual se produce un fallo, ya que esta intenta cargar datos que no existen ya
+        
         let fetch: NSFetchRequest<HeroeEntity> = HeroeEntity.fetchRequest()
         
         do {

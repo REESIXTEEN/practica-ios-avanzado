@@ -34,22 +34,24 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             loginViewController.modalPresentationStyle = .fullScreen
             self.navigationController?.present(loginViewController, animated: true)
         }
-        viewModel.getHeroes(){ [weak self] heroes in
-            self?.heroes = heroes
-            self?.searchedHeroes = heroes
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        guard heroes != nil else{
-//           heroes = []
-//           searchedHeroes = []
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //He puesto esto aqui ya que la primera vez que se hace login, no se mostrarían los heroes en la tabla si lo
+        // pusiese en el loadView()
+        if heroes.isEmpty {
+            viewModel.getHeroes(){ [weak self] heroes in
+                self?.heroes = heroes
+                self?.searchedHeroes = heroes
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

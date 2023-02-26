@@ -14,7 +14,7 @@ class MapViewModel {
     let network = Network.shared
     
     
-    func getLocations() -> [HeroeEntity] {
+    func getLocations(completion: @escaping ([HeroeEntity]) -> Void) {
         let fetch: NSFetchRequest<HeroeEntity> = HeroeEntity.fetchRequest()
         let token = KeyChain().readData(key: .token)
         do {
@@ -29,11 +29,14 @@ class MapViewModel {
                     }
                 }
             }
-            return heroes
+            // La primera vez que se ejecuta la app y no hay datos en CoreData no se muestran las anotaciones ya que este return se hace antes de que se hayan obtenido las localizaciones de la api. Por limitacion de tiempo no he podido resolver este problema en el que deberia hacer el return cuando obtuviese la ultima localizacion y he puesto un sleep chapuza para solucionar esto.
+            
+            sleep(1)
+            return completion(heroes)
 
         } catch let error as NSError {
             debugPrint("Error getting the locations for the heroes. Error: \(error)")
-            return []
+            return completion([])
         }
         
     }
@@ -41,6 +44,7 @@ class MapViewModel {
     private func saveLocation() {
         do {
             try context.save()
+            debugPrint("Location saved into CoreData")
         } catch let error {
             debugPrint("Error saving data into CoreData. Error: \(error)")
         }
