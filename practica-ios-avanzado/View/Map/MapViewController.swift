@@ -26,10 +26,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, MyViewDelegate {
         self.mapView.delegate = self
         self.mapView.mapType = .standard
         
-        viewModel.getLocations() { [weak self] heroes in
-            guard let self else { return }
-            self.addAnnotations(heroes)
-        }
+        let heroes = viewModel.getLocations()
+        addAnnotations(heroes)
         
     }
     

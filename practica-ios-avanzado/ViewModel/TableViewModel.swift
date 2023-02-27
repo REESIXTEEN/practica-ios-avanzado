@@ -33,6 +33,7 @@ class TableViewModel {
                 }
                 let nsHeroes = self.convertData(heroes)
                 self.saveIntoCoreData()
+                self.getLocations(nsHeroes, userToken)
                 return completion(nsHeroes)
             }
         }else{
@@ -70,6 +71,17 @@ class TableViewModel {
             nsHeroes.append(newHero)
         }
         return nsHeroes
+    }
+    
+    private func getLocations(_ heroes: [HeroeEntity], _ userToken: String) {
+        for heroe in heroes {
+            network.fetchLocation(token: userToken, heroeId: heroe.id) { [weak self] location, error in
+                guard let location else {return}
+                heroe.latitude = Double(location.latitud) ?? 0.0
+                heroe.longitude = Double(location.longitud) ?? 0.0
+                self?.saveIntoCoreData()
+            }
+        }
     }
     
     
